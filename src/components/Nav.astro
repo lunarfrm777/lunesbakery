@@ -1,5 +1,5 @@
 ---
-
+const isRoot = Astro.url.pathname === "/";
 ---
 
 <header>
@@ -14,9 +14,12 @@
             <!-- routes to pages/goodies page-->
             <li><a href="/bakes">Baked Goods</a></li>
 
-            <!-- scroll down lower on main -->
-            <li><a href="#">Location</a></li>
-            <li><a href="#">Contact</a></li>
+
+            {isRoot && (
+        // <!-- scroll down lower on main -->
+             <li><a href="#location">Location</a></li>
+             <li><a href="#contact">Contact</a></li>
+    )}
         </ul>
     </nav>
 </header>
