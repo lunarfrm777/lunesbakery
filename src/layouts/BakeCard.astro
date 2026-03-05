@@ -1,5 +1,16 @@
+---
+const { image, alt, title } = Astro.props;
+import { Image } from "astro:assets";
+---
+
+<div class="bake-card">
+    <h2>title={title}</h2>
+    <Image src={image} alt={alt} />
+    <slot />
+</div>
+
 <style>
-    .card {
+    .bake-card {
         border: 0.5rem rgb(253, 255, 203) solid;
         border-radius: 1rem;
     }
