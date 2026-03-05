@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import bb from "../assets/BakedGoods/TodayBakes/bb.jpg";
 import cc from "../assets/BakedGoods/TodayBakes/cc.png";
 import mc from "../assets/BakedGoods/TodayBakes/mc.jpg";
@@ -8,14 +7,18 @@ import BakeCard from "../layouts/BakeCard.astro";
 
 <h2>Today's Fresh Bakes</h2>
 
-<BakeCard>
-    <Image src={bb} alt="Blueberry Pastry" width={200} />
-</BakeCard>
+<div class="container">
+    <BakeCard image={bb} alt="Blueberry Pastry" width={200} />
 
-<BakeCard>
-    <Image src={cc} alt="Chocolate Croissant" width={200} />
-</BakeCard>
+    <BakeCard image={cc} alt="Chocolate Croissant" width={200} />
 
-<BakeCard>
-    <Image src={mc} alt="Macadamian Nut Cookie" width={200} />
-</BakeCard>
+    <BakeCard image={mc} alt="Macadamian Nut Cookie" width={200} />
+</div>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+    }
+</style>
