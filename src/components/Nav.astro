@@ -29,16 +29,17 @@ const isRoot = Astro.url.pathname === "/";
     ul {
         list-style-type: none;
         display: flex;
-    }
-
-    li {
+        text-decoration: none;
         padding: 1rem;
     }
 
-    .navStyle {
-        display: flex;
+    li {
+        padding: 8px 16px;
+        background-color: rgb(255, 23, 189);
+        margin-right: 5px;
     }
 
-    .navList {}
-
+    ul li {
+        text-decoration: none;
+    }
 </style>
