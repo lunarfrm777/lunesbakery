@@ -3,23 +3,27 @@ const isRoot = Astro.url.pathname === "/";
 ---
 
 <header>
-    <nav>
-        <ul>
-            <!-- routes to root -->
-            <li><a href="/">Home</a></li>
+    <div class="container">
+        <nav>
+            <ul>
+                <!-- routes to root -->
+                <li><a href="/">Home</a></li>
 
-            <!-- routes to pages/about page -->
-            <li><a href="/about">About</a></li>
+                <!-- routes to pages/about page -->
+                <li><a href="/about">About</a></li>
 
-            <!-- routes to pages/goodies page-->
-            <li><a href="/bakes">Baked Goods</a></li>
+                <!-- routes to pages/goodies page-->
+                <li><a href="/bakes">Baked Goods</a></li>
 
-
-            {isRoot && (
-        // <!-- scroll down lower on main -->
-             <li><a href="#location">Location</a></li>
-             <li><a href="#contact">Contact</a></li>
-    )}
-        </ul>
-    </nav>
+                <!-- will only show these li's on home page using isRoot set to / -->
+                {isRoot && (
+            // <!-- scroll down lower on main -->
+                <li><a href="#location">Location</a></li>
+                <li><a href="#contact">Contact</a></li>
+        )}
+            </ul>
+        </nav>
+    </div>
 </header>
+
+<style></style>
