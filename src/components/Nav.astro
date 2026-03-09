@@ -3,8 +3,7 @@ const isRoot = Astro.url.pathname === "/";
 ---
 
 <header>
-    <div class="container">
-        <nav>
+        <nav class="navStyle">
             <ul>
                 <!-- routes to root -->
                 <li><a href="/">Home</a></li>
@@ -26,4 +25,11 @@ const isRoot = Astro.url.pathname === "/";
     </div>
 </header>
 
-<style></style>
+<style>
+    .navStyle {
+        display: flex;
+    }
+
+    .navList {}
+
+</style>
