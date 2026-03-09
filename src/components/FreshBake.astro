@@ -34,7 +34,13 @@ const bakes = [
 <style>
     .container {
         display: flex;
-        flex-direction: row;
+        grid-template-columns: repeat(auto-fill, minmax (200px, 1fr));
+        gap: 1rem;
         margin: 0 auto;
+        justify-content: center;
+    }
+
+    h2 {
+        text-align: center;
     }
 </style>
