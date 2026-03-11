@@ -1,12 +1,11 @@
 ---
 import { Image } from "astro:assets";
-const { image, alt, width } = Astro.props;
+const { image, alt, width, src } = Astro.props;
 ---
 
-<div class="bake-card">
-    <Image src={image} alt={alt} width={200} />
-</div>
-
+<a href={src} class="bake-card">
+    <Image src={image} alt={alt} width={200} height={200} />
+</a>
 <style>
     .bake-card {
         border: 0.5rem rgb(253, 255, 203) solid;
