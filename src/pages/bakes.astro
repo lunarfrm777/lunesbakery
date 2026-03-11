@@ -1,15 +1,19 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 import FreshBake from "../components/FreshBake.astro";
 import Nav from "../components/Nav.astro";
 import Regulars from "../components/Regulars.astro";
 ---
 
-<Nav />
+<Layout>
+    <Nav />
 
-<section>
-    <FreshBake />
-    <Regulars />
-</section>
+    <section>
+        <FreshBake />
+        <Regulars />
+    </section>
+</Layout>
 
 <style>
     body {

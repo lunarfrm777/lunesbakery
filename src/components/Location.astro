@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import BakeryPhoto from "../assets/BakeryLocation.png";
+---
+
+<h2>♡ Location ♡</h2>
+
+<section class="container">
+    <Image
+        src={BakeryPhoto}
+        alt="Location of Lune's Bakery and Lune's Farm"
+        class="location"
+    />
+</section>
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        padding: 1.5rem;
+    }
+
+    .location {
+        width: 50%;
+        height: 50%;
+    }
+
+    h2 {
+        text-align: center;
+    }
+</style>
