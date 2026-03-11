@@ -1,42 +1,18 @@
 ---
 import FreshBake from "../components/FreshBake.astro";
 import Nav from "../components/Nav.astro";
+import Regulars from "../components/Regulars.astro";
 ---
 
 <Nav />
 
 <section>
     <FreshBake />
-    <section>
-        <h2>Daily Regulars</h2>
-
-        <!-- all daily regulars
-        breads:: brown,, white,, rye
-        muffins:: chocolate chip,, blueberry
-        bagels:: whole wheat,, cheese
-        -->
-        <section>
-            <div>
-                <img src="" alt="" />
-            </div>
-
-            <div>
-                <img src="" alt="" />
-            </div>
-
-            <div>
-                <img src="" alt="" />
-            </div>
-        </section>
-    </section>
+    <Regulars />
 </section>
 
 <style>
     body {
         background: rgba(241, 255, 93, 0.944);
-    }
-
-    h2 {
-        text-align: center;
     }
 </style>
