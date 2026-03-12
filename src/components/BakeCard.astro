@@ -12,7 +12,7 @@ const { image, title, alt, width, src } = Astro.props;
 <style>
     .bake-card {
         border: 0.5rem rgb(253, 255, 203) solid;
-        border-radius: 1rem;
+        border-radius: 0.5rem;
         margin-right: 4px;
         text-decoration: none;
         text-align: center;
@@ -21,7 +21,10 @@ const { image, title, alt, width, src } = Astro.props;
 
     .style-title {
         border: 0.5rem rgb(183, 124, 255) solid;
-        /* border-bottom: 2px rgb(31, 30, 30) solid; */
         background-color: rgb(183, 124, 255);
+    }
+
+    h4 {
+        border-bottom: 0.5rem rgb(252, 151, 0) solid;
     }
 </style>
