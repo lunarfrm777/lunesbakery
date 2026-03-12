@@ -1,16 +1,27 @@
 ---
 import { Image } from "astro:assets";
-const { image, alt, width, src } = Astro.props;
+const { image, title, alt, width, src } = Astro.props;
 ---
 
 <a href={src} class="bake-card">
+    <div class="style-title">
+        <h4>{title}</h4>
+    </div>
     <Image src={image} alt={alt} width={200} height={200} />
 </a>
 <style>
     .bake-card {
         border: 0.5rem rgb(253, 255, 203) solid;
         border-radius: 1rem;
-        width: 200px;
         margin-right: 4px;
+        text-decoration: none;
+        text-align: center;
+        color: black;
+    }
+
+    .style-title {
+        border: 0.5rem rgb(183, 124, 255) solid;
+        /* border-bottom: 2px rgb(31, 30, 30) solid; */
+        background-color: rgb(183, 124, 255);
     }
 </style>
