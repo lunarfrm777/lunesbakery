@@ -10,34 +10,41 @@ import Layout from "../layouts/Layout.astro";
         &#x131A9;&#x2661;&#x131AA;About Lune's Bakery&#x131A9;&#x2661;&#x131AA;
     </h2>
 
-    <div class="container">
-        <p>
-            &#x131A9;&#x2661;&#x131AA; Everything is grown right around the
-            corner from the bakery which allows for a Knowing of where all the
-            products are coming from!!! &#x131A9;&#x2661;&#x131AA;
-        </p>
+    <div class="center-wrapper">
+        <div class="container">
+            <p>
+                &#x131A9;&#x2661;&#x131AA; Everything is grown right around the
+                corner from the bakery which allows for a Knowing of where all
+                the products are coming from!!! &#x131A9;&#x2661;&#x131AA;
+            </p>
 
-        <p>
-            &#x131A9;&#x2661;&#x131AA; This journey all started with the simple
-            phrase of "Farmers Feed Cities" and now we have the pleasure,,
-            honour and gratitude to be able to feed cities in another way
-            through the bakery! &#x131A9;&#x2661;&#x131AA;
-        </p>
+            <p>
+                &#x131A9;&#x2661;&#x131AA; This journey all started with the
+                simple phrase of "Farmers Feed Cities" and now we have the
+                pleasure,, honour and gratitude to be able to feed cities in
+                another way through the bakery! &#x131A9;&#x2661;&#x131AA;
+            </p>
+        </div>
     </div>
 </Layout>
 <style>
+    .center-wrapper {
+        display: grid;
+        place-items: center;
+        /* whats happening below ?? 
+        calc(100vh - headerHeight) ensures the container is centered in the remaining space, not over the nav/h1. */
+        min-height: calc(50vh);
+    }
     h2 {
         text-align: center;
     }
 
     .container {
         display: grid;
-        padding: 1rem;
         gap: 1rem;
-        margin: 0 auto;
+        padding: 1rem;
         background-color: blueviolet;
         width: 33.33%;
-        height: 33.33%;
         border-radius: 1rem;
         border: 4px white solid;
     }
