@@ -6,6 +6,11 @@ const { image, title, alt, width, src } = Astro.props;
 <a href={src} class="bake-card">
     <div class="style-title">
         <h4>{title}</h4>
+        <a
+            class="lemonsqueezy-button"
+            href="https://demo.lemonsqueezy.com/checkout/...">
+            Buy Now
+        </a>
     </div>
     <Image src={image} alt={alt} width={200} height={200} />
 </a>
