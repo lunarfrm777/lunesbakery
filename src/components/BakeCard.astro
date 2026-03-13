@@ -7,13 +7,15 @@ const { image, title, alt, width, src } = Astro.props;
     <div class="style-title">
         <h4>{title}</h4>
     </div>
-    <Image src={image} alt={alt} width={200} height={200} />
-    <div>
-        <a
-            class="lemonsqueezy-button"
-            href="https://app.lemonsqueezy.com/checkout/shop.lunesbakery.com">
-            Buy Now
-        </a>
+    <div class="bake-content">
+        <Image
+            class="image-style"
+            src={image}
+            alt={alt}
+            width={200}
+            height={200}
+        />
+        <a href="shop.lunesbakery.com" class="buy-now">Buy Now</a>
     </div>
 </a>
 <style>
@@ -33,5 +35,34 @@ const { image, title, alt, width, src } = Astro.props;
 
     h4 {
         border-bottom: 0.5rem rgb(252, 151, 0) solid;
+    }
+
+    .bake-card h4 {
+        margin-bottom: 10px;
+    }
+
+    /* Image + Buy button container: line up horizontally */
+    .bake-content {
+        display: flex;
+        align-items: center; /* vertically center image & button */
+        gap: 10px; /* space between image and button */
+        justify-content: center; /* center everything horizontally */
+    }
+
+    /* Image styling */
+    .bake-content .image-style {
+        max-width: 100px;
+        border-radius: 0.5rem;
+    }
+
+    /* Buy Now button styling */
+    .bake-content a.buy-now {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: pink;
+        color: black;
+        text-decoration: none;
+        border-radius: 1rem;
+        border: 0.3rem rgb(253, 255, 203) solid;
     }
 </style>
