@@ -3,66 +3,37 @@ import { Image } from "astro:assets";
 const { image, title, alt, width, src } = Astro.props;
 ---
 
-<a href={src} class="bake-card">
-    <div class="style-title">
+<div class="bordered">
+    <a href={src} class="bake-card">
         <h4>{title}</h4>
+        <Image src={image} alt={alt} width={200} height={200} />
+    </a>
+    <div class="checkout-button">
+        <a href="shop.lunesbakery.com">Buy Now</a>
     </div>
-    <div class="bake-content">
-        <Image
-            class="image-style"
-            src={image}
-            alt={alt}
-            width={200}
-            height={200}
-        />
-        <a href="shop.lunesbakery.com" class="buy-now">Buy Now</a>
-    </div>
-</a>
+</div>
+
 <style>
+    .bordered {
+        border: 3px white solid;
+        border-radius: 0.7rem;
+    }
+
+    /* have to improve responsive for cards,, should be a set top middle and bottom so they are sliding with screen size
+    rather than clicking into place */
     .bake-card {
-        border: 0.5rem rgb(253, 255, 203) solid;
+        display: grid;
+        gap: 1rem;
+        background-color: rgb(183, 124, 255);
         border-radius: 0.5rem;
-        margin-right: 4px;
         text-decoration: none;
         text-align: center;
         color: black;
     }
 
-    .style-title {
-        border: 0.5rem rgb(183, 124, 255) solid;
-        background-color: rgb(183, 124, 255);
-    }
-
-    h4 {
-        border-bottom: 0.5rem rgb(252, 151, 0) solid;
-    }
-
-    .bake-card h4 {
-        margin-bottom: 10px;
-    }
-
-    /* Image + Buy button container: line up horizontally */
-    .bake-content {
-        display: flex;
-        align-items: center; /* vertically center image & button */
-        gap: 10px; /* space between image and button */
-        justify-content: center; /* center everything horizontally */
-    }
-
-    /* Image styling */
-    .bake-content .image-style {
-        max-width: 100px;
-        border-radius: 0.5rem;
-    }
-
-    /* Buy Now button styling */
-    .bake-content a.buy-now {
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        background-color: pink;
-        color: black;
+    .checkout-button {
+        padding: 1rem;
         text-decoration: none;
-        border-radius: 1rem;
-        border: 0.3rem rgb(253, 255, 203) solid;
+        background-color: pink;
     }
 </style>
