@@ -1,0 +1,14 @@
+<ul id="cart-items"></ul>
+
+<script type="module">
+    import { getCart } from "../scripts/cart.js";
+
+    const items = getCart();
+    const list = document.querySelector("#cart-items");
+
+    items.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - $${item.price}`;
+        list.appendChild(li);
+    });
+</script>
