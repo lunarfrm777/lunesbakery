@@ -8,32 +8,43 @@
     const totalEl = document.querySelector("#cart-total");
 
     function renderCart() {
+        // importing getCart function from cart.js scripts,, also needs to be declared at top of function!
+        const items = getCart();
+
         // if cart is empty
         if (items.length === 0) {
             list.innerHTML = "<p>Your cart is empty 🧁</p>";
             totalEl.textContent = "";
             return;
         }
-        // importing getCart function from cart.js scripts
-        const items = getCart();
 
         list.innerHTML = "";
 
+        // cart
         let total = 0;
 
+        // getting the current state from localstorage from getCart function and adding item price to total
         items.forEach((item, index) => {
             total += item.price;
 
+            // defined list item
             const li = document.createElement("li");
 
+            // this is some plain HTML wow!! i guess returning the name of items that were created as list items
+            // and having the price there as well? like
+            // name price
+            // name price
             li.innerHTML = `
       ${item.name} - $${item.price}
+        // remove button which is connected to the renderCart function ,, index?
+
       <button data-index="${index}">❌</button>
     `;
-
+            // removes list item
             list.appendChild(li);
         });
 
+        // totalEl = #cart-total -> comes from where?
         totalEl.textContent = `Total: $${total}`;
 
         // remove item

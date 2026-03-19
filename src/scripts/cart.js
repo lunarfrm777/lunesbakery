@@ -10,6 +10,7 @@ export function addToCart(name, price) {
   updateCartCount();
 }
 
+// returning the current cart in local storage 
 export function getCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
 }
