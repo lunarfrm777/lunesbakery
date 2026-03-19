@@ -8,6 +8,13 @@
     const totalEl = document.querySelector("#cart-total");
 
     function renderCart() {
+        // if cart is empty
+        if (items.length === 0) {
+            list.innerHTML = "<p>Your cart is empty 🧁</p>";
+            totalEl.textContent = "";
+            return;
+        }
+        // importing getCart function from cart.js scripts
         const items = getCart();
 
         list.innerHTML = "";
