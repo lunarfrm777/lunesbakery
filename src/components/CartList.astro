@@ -11,44 +11,47 @@
         // importing getCart function from cart.js scripts,, also needs to be declared at top of function!
         const items = getCart();
 
-        // if cart is empty
+        // if cart is empty show message and stop
         if (items.length === 0) {
             list.innerHTML = "<p>Your cart is empty 🧁</p>";
             totalEl.textContent = "";
             return;
         }
 
+        // clear existing list so we don't duplicate items
         list.innerHTML = "";
 
-        // cart
+        // tracking total price
         let total = 0;
 
         // getting the current state from localstorage from getCart function and adding item price to total
+        // loop through each cart item
         items.forEach((item, index) => {
+            // adding price total
             total += item.price;
 
-            // defined list item
+            // create a list item
             const li = document.createElement("li");
 
             // this is some plain HTML wow!! i guess returning the name of items that were created as list items
             // and having the price there as well? like
             // name price
             // name price
-            li.innerHTML = `
-      ${item.name} - $${item.price}
-        // remove button which is connected to the renderCart function ,, index?
 
-      <button data-index="${index}">❌</button>
+            // display item name + price + remove button
+            li.innerHTML = `
+                ${item.name} - $${item.price} <button data-index="${index}">❌</button>
     `;
-            // removes list item
+            // add to DOM
             list.appendChild(li);
         });
 
         // totalEl = #cart-total -> comes from where?
+        // display total price
         totalEl.textContent = `Total: $${total}`;
 
-        // remove item
-        document.querySelectorAll("button[data-index]").forEach((btn) => {
+        // This selects ALL buttons on page with data-index,, limits it to just your cart
+        list.querySelectorAll("button[data-index]").forEach((btn) => {
             btn.onclick = () => {
                 removeItem(btn.dataset.index);
             };
