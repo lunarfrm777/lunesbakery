@@ -1,14 +1,48 @@
 <ul id="cart-items"></ul>
+<p id="cart-total"></p>
 
 <script type="module">
     import { getCart } from "../scripts/cart.js";
 
-    const items = getCart();
     const list = document.querySelector("#cart-items");
+    const totalEl = document.querySelector("#cart-total");
 
-    items.forEach((item) => {
-        const li = document.createElement("li");
-        li.textContent = `${item.name} - $${item.price}`;
-        list.appendChild(li);
-    });
+    function renderCart() {
+        const items = getCart();
+
+        list.innerHTML = "";
+
+        let total = 0;
+
+        items.forEach((item, index) => {
+            total += item.price;
+
+            const li = document.createElement("li");
+
+            li.innerHTML = `
+      ${item.name} - $${item.price}
+      <button data-index="${index}">❌</button>
+    `;
+
+            list.appendChild(li);
+        });
+
+        totalEl.textContent = `Total: $${total}`;
+
+        // remove item
+        document.querySelectorAll("button[data-index]").forEach((btn) => {
+            btn.onclick = () => {
+                removeItem(btn.dataset.index);
+            };
+        });
+    }
+
+    function removeItem(index) {
+        let cart = getCart();
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCart();
+    }
+
+    renderCart();
 </script>

@@ -11,7 +11,7 @@ export function addToCart(name, price) {
 }
 
 export function getCart() {
-  return cart;
+  return JSON.parse(localStorage.getItem("cart")) || [];
 }
 
 export function updateCartCount() {
