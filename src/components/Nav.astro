@@ -1,5 +1,6 @@
 ---
 const isRoot = Astro.url.pathname === "/";
+import Cart from "../components/Cart.jsx";
 ---
 
 <header>
@@ -20,6 +21,9 @@ const isRoot = Astro.url.pathname === "/";
                 <li><a href="#location">Location</a></li>
                 <li><a href="#contact">Contact</a></li>
         )}
+
+                <Cart client:load />
+
                 <li><a href="/cart">🛒 Cart (<span id="cart-count">0</span>)</a></li>
             </ul>
         </nav>
