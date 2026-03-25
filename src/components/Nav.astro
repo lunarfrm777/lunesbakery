@@ -1,8 +1,20 @@
 ---
 const isRoot = Astro.url.pathname === "/";
+const links = ['Home', 'About', 'Baked Goods', 'Location', 'Contact']
 import Cart from "../components/Cart.jsx";
 ---
 
+<nav class="flex justify-between items-center w-full h-20 px-4 text-white bg-pink-500">
+  <h1 class="text-5xl font-signature">♡ Lune ♡</h1>
+
+  <ul class="hidden md:flex">
+    {links.map((link) => (
+      <li class="px-4 capitalize">
+        <a href={`#${link}`}>{link}</a>
+      </li>
+    ))}
+  </ul>
+</nav>
 <header>
         <nav class="navStyle">
             <ul>
