@@ -4,62 +4,73 @@ import Cart from "../components/Cart.jsx";
 ---
 
 <header>
-        <nav class="nav-style">
-            <li><h2 class="bakery-title">♡ Lune's Bakery ♡</h2></li>
-            <ul>
-                <!-- routes to root -->
-                <li><a href="/">Home</a></li>
+    <nav class="nav-style">
+        <h2 class="bakery-title">♡ Lune's Bakery ♡</h2>
 
-                <!-- routes to pages/about page -->
-                <li><a href="/about">About</a></li>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/bakes">Baked Goods</a></li>
 
-                <!-- routes to pages/goodies page-->
-                <li><a href="/bakes">Baked Goods</a></li>
+            {
+                isRoot && (
+                    <>
+                        <li>
+                            <a href="#location">Location</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </>
+                )
+            }
 
-                <!-- will only show these li's on home page using isRoot set to / -->
-                {isRoot && (
-            // <!-- scroll down lower on main -->
-                <li><a href="#location">Location</a></li>
-                <li><a href="#contact">Contact</a></li>
-        )}
+            <Cart client:load />
+            <li>
+                <a href="/cart">🛒 Cart (<span id="cart-count">0</span>)</a>
+            </li>
+        </ul>
+    </nav>
 
-                <Cart client:load />
+    <style>
+        .nav-style {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+            height: 5rem;
+            background-color: #ec4899;
+            color: white;
+        }
 
-                <li><a href="/cart">🛒 Cart (<span id="cart-count">0</span>)</a></li>
-            </ul>
-        </nav>
-    </div>
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none; /* removes bullets */
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            list-style: none;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            padding: 1rem;
+            justify-content: center;
+        }
+
+        li {
+            padding: 8px 16px;
+            margin-right: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+    </style>
 </header>
-
-<style>
-    .nav-style {
-     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 5rem;        /* h-20 = 80px = 5rem */
-    padding-left: 1rem;  /* px-4 */
-    padding-right: 1rem;
-    color: white;
-    background-color: #ec4899; /* pink-500 */
-    }
-  
-    ul {
-        list-style-type: none;
-        display: flex;
-        padding: 1rem;
-        justify-content: center;
-    }
-
-    li {
-        padding: 8px 16px;
-        background-color: rgb(253, 144, 222);
-        margin-right: 5px;
-    }
-
-    a {
-        text-decoration: none;
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-    }
-</style>
