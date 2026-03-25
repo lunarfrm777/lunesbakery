@@ -5,7 +5,7 @@ import Cart from "../components/Cart.jsx";
 
 <header>
     <nav class="nav-style">
-        <h2 class="bakery-title">♡ Lune's Bakery ♡</h2>
+        <h2>♡ Lune's Bakery ♡</h2>
 
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
@@ -27,12 +27,17 @@ import Cart from "../components/Cart.jsx";
 
             <Cart client:load />
             <li>
-                <a href="/cart">🛒 Cart (<span id="cart-count">0</span>)</a>
+                <a class="cart-styling" href="/cart"
+                    >🛒 Cart (<span id="cart-count">0</span>)</a
+                >
             </li>
         </ul>
     </nav>
 
     <style>
+        h2 {
+            color: black;
+        }
         .nav-style {
             display: flex;
             justify-content: space-between;
@@ -63,7 +68,7 @@ import Cart from "../components/Cart.jsx";
         }
 
         li {
-            padding: 8px 16px;
+            padding: 1rem 1rem;
             margin-right: 5px;
         }
 
@@ -71,6 +76,10 @@ import Cart from "../components/Cart.jsx";
             text-decoration: none;
             color: rgb(0, 0, 0);
             font-weight: bold;
+        }
+
+        .cart-styling {
+            color: black;
         }
     </style>
 </header>
