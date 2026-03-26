@@ -50,3 +50,17 @@ const { image, title, alt, width, src } = Astro.props;
         text-align: center;
     }
 </style>
+
+<script type="module">
+    import { addToCart } from "../scripts/cart.js";
+
+    document.querySelectorAll(".buy-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            console.log("clicked");
+            addToCart("Cupcake", 5);
+
+            window.location.href = "/cart";
+        });
+    });
+</script>
