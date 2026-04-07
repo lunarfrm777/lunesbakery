@@ -54,17 +54,19 @@ const { image, title, alt, width, src } = Astro.props;
         text-align: center;
     }
 </style>
-<script>
+<script type="module">
   import { addToCart } from "../scripts/cart.js";
 
-  document.querySelectorAll(".buy-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
+  document.addEventListener("click", (e) => {
+    if (e.target.matches(".buy-btn")) {
       e.preventDefault();
-      console.log("clicked");
 
-      addToCart("Cupcake", 5);
+      const name = e.target.dataset.name;
+      const price = Number(e.target.dataset.price);
 
-      window.location.href = "/cart";
-    });
+      addToCart(name, price);
+
+      console.log("added to cart");
+    }
   });
 </script>
