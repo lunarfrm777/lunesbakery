@@ -1,9 +1,9 @@
 ---
 const isRoot = Astro.url.pathname === "/";
-import Cart from "../components/Cart.jsx";
 ---
 
 <header>
+    <!-- fix accessibility  -->
     <nav class="nav-style">
         <h2>♡ Lune's Bakery ♡</h2>
 
@@ -24,8 +24,6 @@ import Cart from "../components/Cart.jsx";
                     </>
                 )
             }
-
-            <Cart client:load />
             <li>
                 <a class="cart-styling" href="/cart"
                     >🛒 Cart (<span id="cart-count">0</span>)</a
@@ -33,6 +31,7 @@ import Cart from "../components/Cart.jsx";
             </li>
         </ul>
     </nav>
+</header>
 
     <style>
         h2 {
@@ -82,4 +81,21 @@ import Cart from "../components/Cart.jsx";
             color: black;
         }
     </style>
-</header>
+<script type="module">
+  function updateCartCount() {
+    try {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+
+      const el = document.getElementById("cart-count");
+      if (el) el.textContent = count;
+    } catch {
+      console.error("cart parse failed");
+    }
+  }
+
+  updateCartCount();
+
+  // optional: update if storage changes (multi-tab)
+  window.addEventListener("storage", updateCartCount);
+</script>
