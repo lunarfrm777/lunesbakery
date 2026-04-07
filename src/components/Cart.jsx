@@ -47,7 +47,7 @@ export default function Cart() {
     <div>
       <ul>
         {cart.map((item, index) => (
-          <li key={index}>
+          <li key={item.id}>
             {item.name} - ${item.price} x {item.qty}
 
             <button onClick={() => decrease(index)}>-</button>

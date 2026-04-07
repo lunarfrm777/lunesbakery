@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+ import { addToCart } from "../scripts/cart.js"
 const { image, title, alt, width, src } = Astro.props;
 ---
 
@@ -52,7 +53,6 @@ const { image, title, alt, width, src } = Astro.props;
 </style>
 
 <script type="module">
-    import { addToCart } from "../scripts/cart.js";
 
     document.querySelectorAll(".buy-btn").forEach((btn) => {
         btn.addEventListener("click", (e) => {
