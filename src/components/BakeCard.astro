@@ -4,16 +4,19 @@ import { Image } from "astro:assets";
 const { image, title, alt, width, src } = Astro.props;
 ---
 
+
 <div class="bordered">
-    <a href={src} class="bake-card">
-        <h4>{title}</h4>
-        <Image src={image} alt={alt} width={200} height={200} />
-    </a>
-    <div class="checkout-button">
-        <a class="buy-btn">Buy Now</a>
-        <a href="/cart">Checkout</a>
-    </div>
+  <a href={src} class="bake-card">
+    <h4>{title}</h4>
+    <Image src={image} alt={alt} width={200} height={200} />
+  </a>
+
+  <div class="checkout-button">
+    <a class="buy-btn">Buy Now</a>
+    <a href="/cart">Checkout</a>
+  </div>
 </div>
+
 
 <style>
     .bordered {
@@ -51,16 +54,17 @@ const { image, title, alt, width, src } = Astro.props;
         text-align: center;
     }
 </style>
+<script>
+  import { addToCart } from "../scripts/cart.js";
 
-<script type="module">
+  document.querySelectorAll(".buy-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log("clicked");
 
-    document.querySelectorAll(".buy-btn").forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            console.log("clicked");
-            addToCart("Cupcake", 5);
+      addToCart("Cupcake", 5);
 
-            window.location.href = "/cart";
-        });
+      window.location.href = "/cart";
     });
+  });
 </script>
