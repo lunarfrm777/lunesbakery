@@ -12,7 +12,7 @@ const { image, title, alt, width, src } = Astro.props;
   </a>
 
   <div class="checkout-button">
-    <button><a class="buy-btn" data-name="Cupcake" data-price="5">Buy Now</a></button>
+    <button><a class="buy-btn" data-id="cupcake-1" data-name="Cupcake" data-price="5">Buy Now</a></button>
     <a href="/cart">Checkout</a>
   </div>
 </div>
@@ -61,10 +61,12 @@ const { image, title, alt, width, src } = Astro.props;
     if (e.target.matches(".buy-btn")) {
       e.preventDefault();
 
+      // using ids to store get remove 
+      const id = e.target.dataset.id;
       const name = e.target.dataset.name;
       const price = Number(e.target.dataset.price);
 
-      addToCart(name, price);
+      addToCart(id, name, price);
 
       console.log("added to cart");
     }
