@@ -12,6 +12,7 @@ function saveCart(cart) {
 export function addToCart(id, name, price) {
   const cart = getCart();
 
+  // avoiding two items with same name or lol renaming item and breaking logic
   const existingItem = cart.find(item => item.id === id);
 
   if (existingItem) {
