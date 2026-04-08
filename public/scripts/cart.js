@@ -33,6 +33,8 @@ export function addToCart(id, name, price) {
   saveCart(cart);
   // updates cart immediately
   updateCartCount();
+  // this allows for the cart to be updated instantly!
+  window.dispatchEvent(new Event("cart-updated"));
 }
 
 // export function updateCartCount() {
