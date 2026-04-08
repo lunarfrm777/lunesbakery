@@ -59,7 +59,7 @@ const { image, title, alt, width, src } = Astro.props;
 
   document.addEventListener("click", (e) => {
     if (e.target.matches(".buy-btn")) {
-      e.preventDefault();
+       console.log("CLICK WORKS");
 
       // using ids to store get remove 
       const id = e.target.dataset.id;

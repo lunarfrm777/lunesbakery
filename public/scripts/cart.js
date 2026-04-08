@@ -35,11 +35,20 @@ export function addToCart(id, name, price) {
   updateCartCount();
 }
 
+// export function updateCartCount() {
+//   const count = document.querySelector("#cart-count");
+//   if (count) count.textContent = cart.length;
+// }
 export function updateCartCount() {
   const count = document.querySelector("#cart-count");
-  if (count) count.textContent = cart.length;
-}
+  if (!count) return;
 
+  const cart = getCart(); // ✅ get fresh cart
+
+  const total = cart.reduce((sum, item) => sum + item.qty, 0);
+
+  count.textContent = total;
+}
 export function clearCart() {
   cart = [];
   saveCart();
