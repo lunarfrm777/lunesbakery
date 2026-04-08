@@ -12,7 +12,7 @@ function saveCart(cart) {
 export function addToCart(id, name, price) {
   const cart = getCart();
 
-  const existingItem = cart.find(item => item.name === name);
+  const existingItem = cart.find(item => item.id === id);
 
   if (existingItem) {
     // increasing exisitngItem by 1 if there

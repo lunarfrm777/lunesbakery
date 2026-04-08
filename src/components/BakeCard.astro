@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
- import { addToCart } from "../scripts/cart.js"
+ import { addToCart } from "../../public/scripts/cart.js"
 const { image, title, alt, width, src } = Astro.props;
 ---
 
@@ -12,7 +12,7 @@ const { image, title, alt, width, src } = Astro.props;
   </a>
 
   <div class="checkout-button">
-    <a class="buy-btn" data-name="Cupcake" data-price="5">Buy Now</a>
+    <button><a class="buy-btn" data-name="Cupcake" data-price="5">Buy Now</a></button>
     <a href="/cart">Checkout</a>
   </div>
 </div>
