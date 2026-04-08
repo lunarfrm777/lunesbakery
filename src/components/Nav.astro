@@ -97,6 +97,8 @@ const isRoot = Astro.url.pathname === "/";
 
   updateCartCount();
 
-  // optional: update if storage changes (multi-tab)
+// updating in this tab! 
+   window.addEventListener("cart-updated", updateCartCount);
+//   storage across tabs!
   window.addEventListener("storage", updateCartCount);
 </script>
