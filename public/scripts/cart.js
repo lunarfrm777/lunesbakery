@@ -20,7 +20,7 @@ export function addToCart(id, name, price) {
     // otherwise → add new item with id + qty
     cart.push({
       // generates unique id
-      id,
+      id: crypto.randomUUID(),
       name,
       price,
       // qty allows for avoiding duplications in the array of items,, and rather just updating value of key
