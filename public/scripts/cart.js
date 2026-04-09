@@ -16,11 +16,11 @@ export function addToCart(id, name, price) {
   const existingItem = cart.find(item => item.id === id);
 
 
- if (existingItem.length == 0) {
+ if (!existingItem) {
     // otherwise → add new item with id + qty
     cart.push({
       // generates unique id
-      id: crypto.randomUUID(),
+      id,
       name,
       price,
       // qty allows for avoiding duplications in the array of items,, and rather just updating value of key
