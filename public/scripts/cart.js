@@ -15,10 +15,8 @@ export function addToCart(id, name, price) {
   // avoiding two items with same name or lol renaming item and breaking logic
   const existingItem = cart.find(item => item.id === id);
 
-  if (existingItem) {
-    // increasing exisitngItem by 1 if there
-    existingItem.qty += 1;
-  } else {
+
+ if (existingItem.length == 0) {
     // otherwise → add new item with id + qty
     cart.push({
       // generates unique id
@@ -28,6 +26,9 @@ export function addToCart(id, name, price) {
       // qty allows for avoiding duplications in the array of items,, and rather just updating value of key
       qty: 1
     });
+  } else {
+    // increasing exisitngItem by 1 if there
+    existingItem.qty += 1;
   }
 
   saveCart(cart);

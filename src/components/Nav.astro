@@ -83,6 +83,7 @@ const isRoot = Astro.url.pathname === "/";
         }
     </style>
 <script type="module">
+    import { getCart } from "../scripts/cart.js";
   function updateCartCount() {
     try {
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
