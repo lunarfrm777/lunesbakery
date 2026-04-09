@@ -68,6 +68,8 @@ const { image, title, alt, width, src } = Astro.props;
       const name = e.target.dataset.name;
       const price = Number(e.target.dataset.price);
 
+      const btn = e.target.closest(".buy-btn");
+      
       // updating addToCart() call using 
       addToCart(
           btn.dataset.id,
