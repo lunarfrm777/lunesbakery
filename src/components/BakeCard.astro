@@ -61,22 +61,41 @@ const { image, title, alt, width, src } = Astro.props;
 <script type="module">
   import { addToCart } from "../scripts/cart.js";
 
-  document.addEventListener("click", (e) => {
-    if (e.target.closest(".buy-btn")) {
-      // using ids to store get remove 
-      const id = e.target.dataset.id;
-      const name = e.target.dataset.name;
-      const price = Number(e.target.dataset.price);
+  // document.addEventListener("click", (e) => {
+  //   if (e.target.closest(".buy-btn")) {
+  //     // using ids to store get remove 
+  //     const id = e.target.dataset.id;
+  //     const name = e.target.dataset.name;
+  //     const price = Number(e.target.dataset.price);
 
-      const btn = e.target.closest(".buy-btn");
-      
-      // updating addToCart() call using 
-      addToCart(
-          btn.dataset.id,
-          btn.dataset.name,
-         Number(btn.dataset.price)
-    )
-       console.log("added to cart");
-    }
+  //     const btn = e.target.closest(".buy-btn");
+
+  //     // updating addToCart() call using 
+  //     addToCart(
+  //         btn.dataset.id,
+  //         btn.dataset.name,
+  //        Number(btn.dataset.price)
+  //   )
+  //      console.log("added to cart");
+  //   }
+  // });
+
+  if (!window.__cartListenerAdded) {
+  window.__cartListenerAdded = true;
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".buy-btn");
+    if (!btn) return;
+
+    console.log("CLICK WORKS");
+
+    const id = btn.dataset.id;
+    const name = btn.dataset.name;
+    const price = Number(btn.dataset.price);
+
+    addToCart(id, name, price);
+
+    console.log("added to cart");
   });
+}
 </script>
