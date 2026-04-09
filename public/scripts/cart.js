@@ -52,6 +52,7 @@ export function updateCartCount() {
 
   count.textContent = total;
 }
+
 export function clearCart() {
   cart = [];
   saveCart();

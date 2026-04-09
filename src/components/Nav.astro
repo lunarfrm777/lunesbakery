@@ -83,23 +83,12 @@ const isRoot = Astro.url.pathname === "/";
         }
     </style>
 <script type="module">
-    import { getCart } from "../scripts/cart.js";
-  function updateCartCount() {
-    try {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const count = cart.reduce((sum, item) => sum + item.qty, 0);
-
-      const el = document.getElementById("cart-count");
-      if (el) el.textContent = count;
-    } catch {
-      console.error("cart parse failed");
-    }
-  }
+  import { updateCartCount } from "/scripts/cart";
 
   updateCartCount();
 
-// updating in this tab! 
+    // updating in this tab! 
    window.addEventListener("cart-updated", updateCartCount);
-//   storage across tabs!
+    //   storage across tabs!
   window.addEventListener("storage", updateCartCount);
 </script>
