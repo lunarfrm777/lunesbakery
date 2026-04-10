@@ -58,7 +58,9 @@ const bakes = [
         // getting the current state from localstorage from getCart function and adding item price to total
         // loop through each cart item
         items.forEach((item, index) => {
-            // adding price total
+            // old way was adding the price total! thats not what we want to output here
+            // “Add the price of ALL quantities of this item”
+            // makes your total reflect how many of each item the user actually added, not just counting each item once.
             total += item.price * item.qty;
 
             // create a list item
