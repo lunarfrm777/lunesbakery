@@ -84,8 +84,18 @@ const isRoot = Astro.url.pathname === "/";
     </style>
 <script type="module">
   import { updateCartCount } from "/public/scripts/cart";
-
+  import { getCartTotal } from "../scripts/cart.js";
+ 
   updateCartCount();
+
+const navTotalEl = document.querySelector("#nav-total");
+
+function updateNavTotal() {
+  const total = getCartTotal();
+  navTotalEl.textContent = `$${total}`;
+}
+
+updateNavTotal();
 
     // updating in this tab! 
    window.addEventListener("cart-updated", updateCartCount);
