@@ -36,6 +36,8 @@ export function addToCart(id, name, price) {
   updateCartCount();
   // this allows for the cart to be updated instantly!
   window.dispatchEvent(new Event("cart-updated"));
+  // this is for the $ amount of the cart
+  document.dispatchEvent(new Event("cartUpdated"));
 }
 
 // export function updateCartCount() {

@@ -25,6 +25,7 @@ const isRoot = Astro.url.pathname === "/";
                     </>
                 )
             }
+            <li><span id="nav-total">$0</span></li>
             <li>
                 <a class="cart-styling" href="/checkout"
                     >🛒 Cart (<span id="cart-count">0</span>)</a
@@ -83,6 +84,13 @@ const isRoot = Astro.url.pathname === "/";
         }
     </style>
 <script type="module">
+    // ✅ Step 3: Update it when cart changes
+
+    // Right now:
+    // You update the cart
+    // But your nav doesn’t know it changed
+
+// So after addToCart() and removeItem():
   import { updateCartCount } from "/public/scripts/cart";
   import { getCartTotal } from "../scripts/cart.js";
  
