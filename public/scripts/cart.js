@@ -53,10 +53,15 @@ export function updateCartCount() {
   count.textContent = total;
 }
 
+// the previous version assumed that there is a global [cart] variable somewhere
+// there isnt anymore! and then saveCart() would use that global cart
+// now not using global cart and using local storage!!!!! avoiding getting out of sync with local
+// storage using old method
+// 
 export function clearCart() {
-  cart = [];
-  saveCart();
+  localStorage.removeItem("cart")
   updateCartCount();
+  window.dispatchEvent(new Event("cart-updated"))
 }
 
 document.addEventListener("DOMContentLoaded", updateCartCount);
