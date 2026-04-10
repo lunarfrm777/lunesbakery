@@ -57,7 +57,6 @@ export function updateCartCount() {
 // there isnt anymore! and then saveCart() would use that global cart
 // now not using global cart and using local storage!!!!! avoiding getting out of sync with local
 // storage using old method
-// 
 export function clearCart() {
   localStorage.removeItem("cart")
   updateCartCount();
