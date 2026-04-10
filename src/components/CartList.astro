@@ -59,7 +59,7 @@ const bakes = [
         // loop through each cart item
         items.forEach((item, index) => {
             // adding price total
-            total += item.price;
+            total += item.price * item.qty;
 
             // create a list item
             const li = document.createElement("li");
@@ -70,9 +70,13 @@ const bakes = [
             // name price
 
             // display item name + price + remove button
-            li.innerHTML = `
-                ${item.name} - $${item.price} <button data-index="${index}">❌</button>
-    `;
+    //         li.innerHTML = `
+    //             ${item.name} - $${item.price} <button data-index="${index}">❌</button>
+    // `;
+    li.innerHTML = `
+  ${item.name} (x${item.qty}) - $${item.price * item.qty}
+  <button data-index="${index}">❌</button>
+`;
             // add to DOM
             list.appendChild(li);
         });
