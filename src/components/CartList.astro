@@ -26,9 +26,13 @@ const bakes = [
 ];
 ---
 
+<div class="container">
+    {bakes.map((bake) => <BakeCard {...bake} />)}
+</div>
 <ul id="cart-items"></ul>
 <p id="cart-total"></p>
-</div>
+
+
 <script type="module">
     import { getCart } from "../scripts/cart.js";
 
