@@ -53,6 +53,15 @@ export function updateCartCount() {
   count.textContent = total;
 }
 
+// wanting to display the $ value with the items added to the cart
+export function getCartTotal() {
+  const cart = getCart();
+
+  return cart.reduce((total, item) => {
+    return total + item.price * item.qty;
+  }, 0);
+}
+
 // the previous version assumed that there is a global [cart] variable somewhere
 // there isnt anymore! and then saveCart() would use that global cart
 // now not using global cart and using local storage!!!!! avoiding getting out of sync with local
