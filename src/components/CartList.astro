@@ -1,21 +1,34 @@
 ---
-import { Image } from "astro:assets";
-const { image, title, alt, width, src } = Astro.props;
+import BakeCard from "../components/BakeCard.astro";
+import bb from "../assets/BakedGoods/TodayBakes/bb.jpg";
+import cc from "../assets/BakedGoods/TodayBakes/cc.png";
+import mc from "../assets/BakedGoods/TodayBakes/mc.jpg";
+
+const bakes = [
+    {
+        image: bb,
+        title: "Blueberry Pastry",
+        alt: "Blueberry Pastry",
+        src: "/bakes",
+    },
+    {
+        image: cc,
+        title: "Chocolate Croissant",
+        alt: "Chocolate Croissant",
+        src: "/bakes",
+    },
+    {
+        image: mc,
+        title: "Macadamia Nut Cookie",
+        alt: "Macadamia Nut Cookie",
+        src: "/bakes",
+    },
+];
 ---
-
-
-<div class="bordered">
-  <a href={src} class="bake-card">
-    <h4>{title}</h4>
-    <Image src={image} alt={alt} width={200} height={200} />
-  </a>
-
 
 <ul id="cart-items"></ul>
 <p id="cart-total"></p>
 </div>
-
-
 <script type="module">
     import { getCart } from "../scripts/cart.js";
 
@@ -80,15 +93,3 @@ const { image, title, alt, width, src } = Astro.props;
 
     renderCart();
 </script>
-
-<style>
-    .bake-card {
-        display: grid;
-        gap: 1rem;
-        background-color: rgb(183, 124, 255);
-        border-radius: 0.5rem;
-        text-decoration: none;
-        text-align: center;
-        color: black;
-    }
-</style>
