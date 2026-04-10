@@ -19,8 +19,8 @@ export function addToCart(id, name, price) {
  if (!existingItem) {
     // otherwise → add new item with id + qty
     cart.push({
-      // generates unique id
-      id: crypto.randomUUID(),
+      // use product id rather than generating a new one on every click!! -> function called in BakeCard
+      id,
       name,
       price,
       // qty allows for avoiding duplications in the array of items,, and rather just updating value of key
