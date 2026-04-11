@@ -3,18 +3,27 @@ import { Image } from "astro:assets";
 import BakeryPhoto from "../assets/BakeryLocation.png";
 ---
 
-<div>
-<h2>♡ Location ♡</h2>
+<div class="location-styling">
+        <h2>♡ Location ♡</h2>
 
-<section class="container">
-    <Image
-        src={BakeryPhoto}
-        alt="Location of Lune's Bakery and Lune's Farm"
-        class="location"
-    />
-</section>
+        <section class="container">
+            <Image
+                src={BakeryPhoto}
+                alt="Location of Lune's Bakery and Lune's Farm"
+                class="location"
+            />
+    </section>
 </div>
+
 <style>
+    .location-styling {
+        padding: 1rem;
+        background: linear-gradient(
+      to right,
+      rgb(237, 242, 85) 0%,
+      rgb(255, 163, 65) 96%
+    );
+    }
     .container {
         display: flex;
         justify-content: center;
