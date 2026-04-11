@@ -37,7 +37,7 @@ export function addToCart(id, name, price) {
   // this allows for the cart to be updated instantly!
   window.dispatchEvent(new Event("cart-updated"));
   // this is for the $ amount of the cart
-  document.dispatchEvent(new Event("cartUpdated"));
+  document.dispatchEvent(new Event("nav-total"));
 }
 
 // export function updateCartCount() {
@@ -62,6 +62,8 @@ export function getCartTotal() {
   return cart.reduce((total, item) => {
     return total + item.price * item.qty;
   }, 0);
+
+  // window.dispatchEvent(new Event("nav-total"))
 }
 
 // the previous version assumed that there is a global [cart] variable somewhere
