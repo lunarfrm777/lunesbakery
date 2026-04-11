@@ -100,7 +100,8 @@ const navTotalEl = document.querySelector("#nav-total");
 
 function updateNavTotal() {
   const total = getCartTotal();
-  navTotalEl.textContent = `$${total}`;
+//   2 decimal places for $ total
+  navTotalEl.textContent = `$${total.toFixed(2)}`;
 }
 
 updateNavTotal();
