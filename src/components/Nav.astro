@@ -105,8 +105,12 @@ function updateNavTotal() {
 
 updateNavTotal();
 
-    // updating in this tab! 
-   window.addEventListener("cart-updated", updateCartCount);
+    // updating getCart() (product items)
+    // updating getCartTotal ($ amount)
+   window.addEventListener("cart-updated", () => {
+  updateCartCount();   // uses getCart()
+  updateNavTotal();    // uses getCartTotal()
+});
     //   storage across tabs!
   window.addEventListener("storage", updateCartCount);
 </script>
