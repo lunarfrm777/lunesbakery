@@ -94,8 +94,6 @@ const isRoot = Astro.url.pathname === "/";
   import { updateCartCount } from "/public/scripts/cart";
   import { getCartTotal } from "../scripts/cart.js";
  
-  updateCartCount();
-
 const navTotalEl = document.querySelector("#nav-total");
 
 function updateNavTotal() {
@@ -104,6 +102,8 @@ function updateNavTotal() {
   navTotalEl.textContent = `$${total.toFixed(2)}`;
 }
 
+// Initial call = “render what already exists now”
+updateCartCount();
 updateNavTotal();
 
     // updating getCart() (product items)
@@ -113,5 +113,8 @@ updateNavTotal();
   updateNavTotal();    // uses getCartTotal()
 });
     //   storage across tabs!
-  window.addEventListener("storage", updateCartCount);
+  window.addEventListener("storage", () => {
+    updateCartCount()
+    updateNavTotal()
+  });
 </script>
