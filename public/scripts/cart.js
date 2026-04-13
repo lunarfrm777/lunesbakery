@@ -9,7 +9,7 @@ function saveCart(cart) {
 }
 
 
-export function addToCart(id, name, price) {
+export function addToCart(id, name, price, image) {
   const cart = getCart();
 
   // avoiding two items with same name or lol renaming item and breaking logic
@@ -23,6 +23,7 @@ export function addToCart(id, name, price) {
       id,
       name,
       price,
+      image,
       // qty allows for avoiding duplications in the array of items,, and rather just updating value of key
       qty: 1
     });
