@@ -1,16 +1,15 @@
 <!-- add main photo of bakery goods as one image -->
 
 <main>
-    <img alt="Baked Goods" src="/src/assets/MainImage.jpg"/>
+    <div class="container">
+        <img alt="Baked Goods" src="/src/assets/MainImage.jpg"/>
 
-    <h3><a href="/contact">Contact Us!</a></h3>
+        <h3><a href="/contact">Contact Us!</a></h3>
+    </div>
 </main>
 
 <style>
     main {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         padding: 1rem;
         background: linear-gradient(
       to right,
@@ -27,6 +26,21 @@
     }
 
     a {
-        
+        background-color: rgb(255, 166, 181);
+        box-shadow:
+            0 4px 15px rgba(0, 0, 0, 0.15),
+            0 10px 30px rgba(0, 0, 0, 0.2);
+        width: 15%;
+        text-decoration: none;
+        padding: .25rem;
+        border-radius: 10px;
+    }
+
+    a:hover {
+        background-color: rgb(253, 113, 239);
+    }
+
+    h3 {
+        text-align: center;
     }
 </style>
