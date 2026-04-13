@@ -1,5 +1,10 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
 import ContactStyle from "../components/ContactStyle.astro";
+import { imageConfig } from "astro:assets";
 ---
-
-<ContactStyle />
+<Layout>
+    <Nav />
+    <ContactStyle />
+</Layout>
