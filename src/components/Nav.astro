@@ -91,16 +91,18 @@ const isRoot = Astro.url.pathname === "/";
     // But your nav doesn’t know it changed
 
 // So after addToCart() and removeItem():
-  import { updateCartCount } from "/public/scripts/cart";
-  import { getCartTotal } from "../scripts/cart.js";
- 
-const navTotalEl = document.querySelector("#nav-total");
+ import { updateCartCount, getCartTotal } from "../scripts/cart.js"
+window.addEventListener("load", () => {
+  const navTotalEl = document.querySelector("#nav-total");
 
-function updateNavTotal() {
-  const total = getCartTotal();
-//   2 decimal places for $ total
-  navTotalEl.textContent = `$${total.toFixed(2)}`;
-}
+  console.log("FOUND:", navTotalEl); // debug
+
+  function updateNavTotal() {
+    if (!navTotalEl) return;
+
+    const total = getCartTotal();
+    navTotalEl.textContent = `${total.toFixed(2)}`;
+  }
 
 // Initial call = “render what already exists now”
 updateCartCount();
@@ -116,5 +118,6 @@ updateNavTotal();
   window.addEventListener("storage", () => {
     updateCartCount()
     updateNavTotal()
+  });
   });
 </script>
