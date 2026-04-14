@@ -11,49 +11,31 @@ import Nav from "../components/Nav.astro";
 </Layout>
 
 <script type="module">
-    import { getCart } from "../scripts/cart.js";
+  import { renderCart } from "../scripts/renderCart.js";
+  import { removeItem } from "../scripts/cart.js";
 
-    const list = document.querySelector("#cart-items");
-    const totalEl = document.querySelector("#cart-total");
+  const list = document.querySelector("#cart-items");
+  const totalEl = document.querySelector("#cart-total");
 
-     function renderCart(list, totalEl, renderItem) {
-        const items = getCart();
+  function renderListItem(item, index) {
+    const li = document.createElement("li");
 
-        // if cart is empty show message and stop
-        if (items.length === 0) {
-            list.innerHTML = "<p>Your cart is empty 🧁</p>";
-            if(totalEl) totalEl.textContent = "";
-            return;
-        }
+    li.innerHTML = `
+      ${item.name} (x${item.qty}) - $${item.price * item.qty}
+      <button>❌</button>
+    `;
 
-        // clear existing list so we don't duplicate items
-        list.innerHTML = "";
+    li.querySelector("button").onclick = () => {
+      removeItem(index);
+      render();
+    };
 
-        // tracking total price
-        let total = 0;
+    return li;
+  }
 
-        // getting the current state from localstorage from getCart function and adding item price to total
-        // loop through each cart item
-         items.forEach((item, index) => {
-        total += item.price * item.qty;
+  function render() {
+    renderCart(list, totalEl, renderListItem);
+  }
 
-        // 👇 YOU control this now
-        const el = renderItem(item, index);
-
-        list.appendChild(el);
-    });
-
-    if (totalEl) {
-        totalEl.textContent = `Total: $${total}`;
-        }
-    }
-
-    function removeItem(index) {
-        let cart = getCart();
-        cart.splice(index, 1);
-        localStorage.setItem("cart", JSON.stringify(cart));
-        renderCart();
-    }
-
-    renderCart(list, totalEl, renderItem);
+  render();
 </script>
