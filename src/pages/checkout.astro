@@ -11,12 +11,15 @@ import Nav from "../components/Nav.astro";
 </Layout>
 
 <script type="module">
-  import { renderCart } from "../scripts/renderCart.js";
-  import { removeItem } from "../scripts/cart.js";
+    import { getCart } from "../scripts/cart.js";
+    import { renderCart } from "../scripts/renderCart.js";
+    import { removeItem } from "../scripts/cart.js";
 
   const list = document.querySelector("#cart-items");
   const totalEl = document.querySelector("#cart-total");
 
+
+  console.log("CART DATA:", getCart());
   function renderListItem(item, index) {
     const li = document.createElement("li");
 
