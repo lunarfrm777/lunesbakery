@@ -16,7 +16,7 @@ const { image, title, alt, width, src } = Astro.props;
       data-id={title.toLowerCase().replaceAll(" ", "-")} 
       data-name={title} 
       data-price="5"
-      data-image={image}>Buy Now</a></button>
+      data-image={image.src}>Buy Now</a></button>
 
     <a href="/cart">Checkout</a>
   </div>
