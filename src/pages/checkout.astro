@@ -16,7 +16,7 @@ import Nav from "../components/Nav.astro";
     const list = document.querySelector("#cart-items");
     const totalEl = document.querySelector("#cart-total");
 
-  export function renderCart(list, totalEl, renderItem) {
+     function renderCart(list, totalEl, renderItem) {
         const items = getCart();
 
         // if cart is empty show message and stop
@@ -55,5 +55,5 @@ import Nav from "../components/Nav.astro";
         renderCart();
     }
 
-    renderCart();
+    renderCart(list, totalEl, renderItem);
 </script>

@@ -39,10 +39,13 @@ export function addToCart(id, name, price, image) {
   window.dispatchEvent(new Event("cart-updated"));
 }
 
-// export function updateCartCount() {
-//   const count = document.querySelector("#cart-count");
-//   if (count) count.textContent = cart.length;
-// }
+
+export function removeItem(index) {
+  let cart = getCart();
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
 export function updateCartCount() {
   const count = document.querySelector("#cart-count");
   if (!count) return;
