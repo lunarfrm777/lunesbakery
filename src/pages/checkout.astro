@@ -19,7 +19,7 @@ import Nav from "../components/Nav.astro";
   const totalEl = document.querySelector("#cart-total");
 
 
-  console.log("CART DATA:", getCart());
+  console.log(getCart()[0]);
   function renderListItem(item, index) {
     const li = document.createElement("li");
 
