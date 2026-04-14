@@ -72,8 +72,9 @@ const { image, title, alt, width, src } = Astro.props;
     const id = btn.dataset.id;
     const name = btn.dataset.name;
     const price = Number(btn.dataset.price);
+    const image = btn.dataset.image;
 
-    addToCart(id, name, price);
+    addToCart({id, name, price, qty: 1, image});
 
     console.log("added to cart");
   });

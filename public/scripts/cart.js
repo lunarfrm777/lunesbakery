@@ -9,21 +9,21 @@ function saveCart(cart) {
 }
 
 
-export function addToCart(item) {
+export function addToCart(product) {
   const cart = getCart();
 
   // avoiding two items with same name or lol renaming item and breaking logic
-  const existingItem = cart.find(item => item.id === id);
+  const existingItem = cart.find(i => i.id === product.id);
 
 
  if (!existingItem) {
     // otherwise → add new item with id + qty
     cart.push({
       // use product id rather than generating a new one on every click!! -> function called in BakeCard
-      id: item.id,
-      name: item.name,
-      price: item.price,
-      image: item.image,
+      id: product.id,
+      name: product.name,
+      price: Number(product.price),
+      image: product.image,
       // qty allows for avoiding duplications in the array of items,, and rather just updating value of key
       qty: 1
     });
