@@ -8,7 +8,6 @@ import Nav from "../components/Nav.astro";
     <h1>Your Cart 🛒</h1>
     <ul id="cart-items"></ul>
     <p id="cart-total"></p>
-    <img src="${item.image}">
 </Layout>
 
 <script type="module">
@@ -25,6 +24,7 @@ import Nav from "../components/Nav.astro";
     const li = document.createElement("li");
 
     li.innerHTML = `
+    <img src="${item.image}" width="60" />
       ${item.name} (x${item.qty}) - $${item.price * item.qty}
       <button>❌</button>
     `;
