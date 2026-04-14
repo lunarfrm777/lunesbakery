@@ -8,3 +8,23 @@ import Nav from "../components/Nav.astro";
     <h1>Your Cart 🛒</h1>
 
 </Layout>
+
+<script>
+    import { renderCart } from "../components/CartList.astro.0.mjs";
+    renderCart(
+  document.querySelector("#cart-items"),
+  document.querySelector("#cart-total"),
+  (item, index) => {
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+      ${item.name} (x${item.qty}) - $${item.price * item.qty}
+      <button data-index="${index}">❌</button>
+    `;
+
+    li.querySelector("button").onclick = () => removeItem(index);
+
+    return li;
+  }
+);
+</script>
