@@ -18,19 +18,17 @@ import Nav from "../components/Nav.astro";
   const list = document.querySelector("#cart-items");
   const totalEl = document.querySelector("#cart-total");
 
-
-  console.log(getCart()[0]);
   function renderListItem(item, index) {
     // update for accessibility?
     const div = document.createElement("div");
 
     div.innerHTML = `
     <div class="container">
-    <div class="bake-card">
-      <h4>${item.name}</h4>
-      <img src="${item.image}" alt="${item.name}" />
-      <p>Qty: ${item.qty}</p>
-      <p>$${item.price * item.qty}</p>
+      <div class="bake-card">
+        <h4>${item.name}</h4>
+        <img src="${item.image}" alt="${item.name}" />
+        <p>Qty: ${item.qty}</p>
+        <p>$${item.price * item.qty}</p>
     </div>
 
     <button class="remove-btn">❌</button>
@@ -52,7 +50,7 @@ import Nav from "../components/Nav.astro";
   render();
 </script>
 <style>
-    .container {
+    #cart-items {
         display: flex;
         grid-template-columns: repeat(auto-fill, minmax (200px, 1fr));
         gap: 1rem;
