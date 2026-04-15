@@ -10,6 +10,25 @@ import Nav from "../components/Nav.astro";
     <p id="cart-total"></p>
 </Layout>
 
+<style>
+  .bordered {
+        border: 3px white solid;
+        border-radius: 0.7rem;
+    }
+
+    /* have to improve responsive for cards,, should be a set top middle and bottom so they are sliding with screen size
+    rather than clicking into place */
+    .bake-card {
+        display: grid;
+        gap: 1rem;
+        background-color: rgb(183, 124, 255);
+        border-radius: 0.5rem;
+        text-decoration: none;
+        text-align: center;
+        color: black;
+    }
+
+    </style>
 <script type="module">
     import { getCart } from "../scripts/cart.js";
     import { renderCart } from "../scripts/renderCart.js";
@@ -25,15 +44,16 @@ import Nav from "../components/Nav.astro";
     const div = document.createElement("div");
 
     div.innerHTML = `
-    <img src="${item.image}" alt="${item.name}" class="cart-img"/>
-
-    <div class="cart-info">
+    <div class="bordered">
+    <div class="bake-card">
       <h4>${item.name}</h4>
+      <img src="${item.image}" alt="${item.name}" />
       <p>Qty: ${item.qty}</p>
       <p>$${item.price * item.qty}</p>
     </div>
 
     <button class="remove-btn">❌</button>
+  </div>
   `;
 
   div.querySelector(".remove-btn").onclick = () => {
