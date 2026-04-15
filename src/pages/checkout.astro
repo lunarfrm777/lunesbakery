@@ -23,19 +23,25 @@ import Nav from "../components/Nav.astro";
   function renderListItem(item, index) {
     const div = document.createElement("div");
 
-    li.innerHTML = `
-    <img src="${item.image}" width="60" />
-      ${item.name} (x${item.qty}) - $${item.price * item.qty}
-      <button>❌</button>
-    `;
+    div.innerHTML = `
+    <img src="${item.image}" alt="${item.name}" class="cart-img"/>
 
-    li.querySelector("button").onclick = () => {
-      removeItem(index);
-      render();
-    };
+    <div class="cart-info">
+      <h4>${item.name}</h4>
+      <p>Qty: ${item.qty}</p>
+      <p>$${item.price * item.qty}</p>
+    </div>
 
-    return li;
-  }
+    <button class="remove-btn">❌</button>
+  `;
+
+  div.querySelector(".remove-btn").onclick = () => {
+    removeItem(index);
+    render();
+  };
+
+  return div;
+}
 
   function render() {
     renderCart(list, totalEl, renderListItem);
