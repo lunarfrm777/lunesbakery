@@ -21,7 +21,7 @@ import Nav from "../components/Nav.astro";
 
   console.log(getCart()[0]);
   function renderListItem(item, index) {
-    const li = document.createElement("li");
+    const div = document.createElement("div");
 
     li.innerHTML = `
     <img src="${item.image}" width="60" />
