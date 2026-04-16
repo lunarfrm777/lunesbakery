@@ -29,6 +29,7 @@ const { image, title, alt, width, src } = Astro.props;
     }
     .checkout-button {
         padding: 1rem;
+        gap: .5rem;
         text-decoration: none;
         background-color: pink;
         display: flex;
@@ -40,6 +41,16 @@ const { image, title, alt, width, src } = Astro.props;
         color: black;
         font-weight: bold;
         text-align: center;
+    }
+
+    button {
+      border-radius: 1rem; 
+      background-color: hotpink;
+    }
+
+    button:hover {
+      background-color: rgb(251, 73, 102);
+      color: black;
     }
 </style>
 <script type="module">
