@@ -23,7 +23,6 @@ import Nav from "../components/Nav.astro";
     const div = document.createElement("div");
 
     div.innerHTML = `
-    <div class="container">
       <div class="bake-card">
         <h4>${item.name}</h4>
         <img src="${item.image}" alt="${item.name}" />
@@ -31,7 +30,6 @@ import Nav from "../components/Nav.astro";
         <p>$${item.price * item.qty}</p>
         <button class="remove-btn">❌</button>
     </div>
-  </div>
   `;
 
   div.querySelector(".remove-btn").onclick = () => {
@@ -57,5 +55,4 @@ import Nav from "../components/Nav.astro";
         justify-content: center;
         padding: 1.5rem;
     }
-
     </style>
