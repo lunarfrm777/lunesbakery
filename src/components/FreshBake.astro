@@ -32,7 +32,7 @@ const bakes = [
 </div>
 {isHome && (
     <div class="more-wrapper">
-        <button>
+        <button class="button-style">
             <a href="/bakes" class="more-button">See More</a>
         </button>
   </div>
@@ -57,10 +57,18 @@ const bakes = [
         justify-content: center;
     }
 
-    button {
+    .button-style {
         background-color: pink;
         border-radius: .2rem;
-        border: 2px solid black;
+        border: 2px solid white;
+    }
+
+    .button-style:hover {
+        background-color: rgb(251, 73, 102);
+    }
+
+    a:hover {
+        color: black;
     }
     .more-button {
         padding: .2rem;
