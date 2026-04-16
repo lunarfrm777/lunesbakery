@@ -1,6 +1,6 @@
 ---
 import BakeCard from "../components/BakeCard.astro";
-
+const isHome = Astro.url.pathname === "/";
 const bakes = [
     {
         image: "/images/BakedGoods/TodayBakes/bb.jpg",
@@ -30,8 +30,14 @@ const bakes = [
 <div class="container">
     {bakes.map((bake) => <BakeCard {...bake} />)}
 </div>
+{isHome && (
+    <div class="more-wrapper">
+        <button>
+            <a href="/bakes" class="more-button">See More</a>
+        </button>
+  </div>
+)}
 
-   <button><a href="/bakes" class="more-button">See More</a></button>
 <style>
     .container {
         display: flex;
@@ -45,9 +51,14 @@ const bakes = [
     h2 {
         text-align: center;
     }
+    
+    .more-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
     .more-button {
-		display: flex;
-		align-items: center;
         padding: .2rem;
         gap: .5rem;
         text-decoration: none;
