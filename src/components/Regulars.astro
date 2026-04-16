@@ -1,32 +1,45 @@
+---
+import BakeCard from "../components/BakeCard.astro";
+
+const bakes = [
+    {
+        image: "/images/BakedGoods/bagel.jpg",
+        title: "Blueberry Pastry",
+        alt: "Blueberry Pastry",
+        src: "/bakes",
+    },
+    {
+        image: "/images/BakedGoods/bread.jpg",
+        title: "Chocolate Croissant",
+        alt: "Chocolate Croissant",
+        src: "/bakes",
+    },
+    {
+        image: "images/BakedGoods/cc-m.jpg",
+        title: "Macadamia Nut Cookie",
+        alt: "Macadamia Nut Cookie",
+        src: "/bakes",
+    },
+];
+---
 <section>
     <h2>Daily Regulars</h2>
-
-    <!-- all daily regulars
-        breads:: brown,, white,, rye
-        muffins:: chocolate chip,, blueberry
-        bagels:: whole wheat,, cheese
-        -->
-    <section>
-        <div>
-            <img src="../../public/images/BakedGoods/bagel.jpg" alt="" />
+        <div class="container">
+            {bakes.map((bake) => <BakeCard {...bake} />)}
         </div>
-
-        <div>
-            <img src="../../public/images/BakedGoods/bread.jpg" alt="" />
-        </div>
-
-        <div>
-            <img src="../../public/images/BakedGoods/cc-m.jpg" alt="" />
-        </div>
-    </section>
 </section>
 
 <style>
-    h2 {
-        text-align: center;
+   .container {
+        display: flex;
+        grid-template-columns: repeat(auto-fill, minmax (200px, 1fr));
+        gap: 1rem;
+        margin: 0 auto;
+        justify-content: center;
+        padding: 1.5rem;
     }
 
-    section {
-        padding: 1.5rem;
+    h2 {
+        text-align: center;
     }
 </style>
