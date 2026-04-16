@@ -21,7 +21,13 @@ img {
 /* adding BakeCard styles globally rather than rewriting it over and over */
     /* have to improve responsive for cards,, should be a set top middle and bottom so they are sliding with screen size
     rather than clicking into place */
-.bake-card {
+
+    .bordered {
+      border: 3px white solid;
+      border-radius: 0.8rem;
+    }
+
+  .bake-card {
         display: grid;
         gap: 1rem;
         background-color: rgb(183, 124, 255);
@@ -29,12 +35,12 @@ img {
         text-decoration: none;
         text-align: center;
         color: black;
-        border: 3px white solid;
         border-radius: 0.7rem;
     }
 
     .bake-card img {
       width: 200px;
       height: 200px;
+      overflow: hidden;
     }
 
