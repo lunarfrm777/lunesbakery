@@ -2,36 +2,26 @@
 import Location from "./Location.astro";
 import Socials from "./Socials.astro";
 ---
-<form class="form-container">
-  <div class="form-row">
-    <label for="name">Name:</label>
-    <input id="name" type="text" />
-  </div>
-
-  <div class="form-row">
-    <label for="email">Email:</label>
-    <input id="email" type="email" />
-  </div>
-
-  <div class="form-row">
-    <label for="message">Message:</label>
-    <textarea id="message"></textarea>
-  </div>
-</form>
 <div class="container">
-    <h2>&#x131A9;&#x2661;&#x131AA; Contact &#x131A9;&#x2661;&#x131AA;</h2>
-    <div class="form-container">
-     <form action="https://api.web3forms.com/submit" method="POST">
+        <h2>&#x131A9;&#x2661;&#x131AA; Contact &#x131A9;&#x2661;&#x131AA;</h2>
+        <form action="https://api.web3forms.com/submit" method="POST" class="form-container">
         <input type="hidden" name="access_key" value="ddd37b81-2574-4b9b-a2aa-4bd9ec129b0e">
-        <label for="name">Name:</label>
-        <input type="text" name="name" required> 
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
-        <label for="email">Message:</label>
-        <textarea name="message" required></textarea>
+        <div class="form-row">
+            <label for="name">Name:</label>
+            <input id="name" type="text" />
+        </div>
+
+        <div class="form-row">
+            <label for="email">Email:</label>
+            <input id="email" type="email" />
+        </div>
+
+        <div class="form-row">
+            <label for="message">Message:</label>
+            <textarea id="message"></textarea>
+        </div>
         <button type="submit">Submit</button>
-        </form>
-    </div>
+    </form>
     <Location />
     <Socials />
 </div>
@@ -73,6 +63,21 @@ import Socials from "./Socials.astro";
         gap: 1rem;
         flex-direction: column;
     }
+    
+    .form-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    label {
+        width: 100px; /* fixed label width = aligned */
+        }
+
+    input,textarea {
+    flex: 1; /* take remaining space */
+        }       
 
     textarea {
         width: 100%;
@@ -80,6 +85,16 @@ import Socials from "./Socials.astro";
         max-height: 300px; /* prevents infinite growth */
         resize: none; /* disables manual dragging */
         overflow-y: hidden; /* hides scrollbar */
+    }
+
+    button {
+      border-radius: 1rem; 
+      background-color: hotpink;
+    }
+
+    button:hover {
+      background-color: rgb(251, 73, 102);
+      color: black;
     }
 </style>
 
