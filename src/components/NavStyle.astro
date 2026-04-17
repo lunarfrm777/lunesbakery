@@ -8,10 +8,10 @@
             <li><a href="/about">About</a></li>
             <li><a href="/bakes">Baked Goods</a></li>
             <li><a href="/contact">Contact</a></li>
-            <li><span id="nav-total">$0</span></li>
+            <li><span class="nav-total">$0</span></li>
             <li>
                 <a class="cart-styling" href="/checkout"
-                    >🛒 Cart (<span id="cart-count">0</span>)</a
+                    >🛒 Cart (<span class="cart-count">0</span>)</a
                 >
             </li>
         </ul>
@@ -100,7 +100,7 @@
 // So after addToCart() and removeItem():
  import { updateCartCount, getCartTotal } from "../scripts/cart.js"
     window.addEventListener("load", () => {
-    const navTotalEl = document.querySelector("#nav-total");
+    const navTotalEl = document.querySelectorAll(".nav-total");
 
   console.log("FOUND:", navTotalEl); // debug
 

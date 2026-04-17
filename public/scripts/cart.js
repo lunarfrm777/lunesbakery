@@ -47,14 +47,16 @@ export function removeItem(index) {
 }
 
 export function updateCartCount() {
-  const count = document.querySelector("#cart-count");
+  const count = document.querySelectorAll(".cart-count");
   if (!count) return;
 
   const cart = getCart(); // ✅ get fresh cart
 
   const total = cart.reduce((sum, item) => sum + item.qty, 0);
 
-  count.textContent = total;
+  count.forEach(el => {
+    el.textContent = total;
+  });
 }
 
 // wanting to display the $ value with the items added to the cart
