@@ -89,3 +89,42 @@
         }
     }
 </style>
+
+<script type="module">
+    // ✅ Step 3: Update it when cart changes
+
+    // Right now:
+    // You update the cart
+    // But your nav doesn’t know it changed
+
+// So after addToCart() and removeItem():
+ import { updateCartCount, getCartTotal } from "../scripts/cart.js"
+window.addEventListener("load", () => {
+  const navTotalEl = document.querySelector("#nav-total");
+
+  console.log("FOUND:", navTotalEl); // debug
+
+  function updateNavTotal() {
+    if (!navTotalEl) return;
+
+    const total = getCartTotal();
+    navTotalEl.textContent = `${total.toFixed(2)}`;
+  }
+
+// Initial call = “render what already exists now”
+updateCartCount();
+updateNavTotal();
+
+    // updating getCart() (product items)
+    // updating getCartTotal ($ amount)
+   window.addEventListener("cart-updated", () => {
+  updateCartCount();   // uses getCart()
+  updateNavTotal();    // uses getCartTotal()
+});
+    //   storage across tabs!
+  window.addEventListener("storage", () => {
+    updateCartCount()
+    updateNavTotal()
+  });
+  });
+</script>
