@@ -4,7 +4,7 @@ import NavStyle from "./NavStyle.astro";
 import MobileMenu from "./MobileMenu.astro";
 ---
 <header class="main-header">
-    <a href="/"><img src="/Logo.png" class="logo" /></a>
+    <!-- <a href="/"><img src="/Logo.png" class="logo" /></a> -->
 
     <NavStyle />
 
@@ -16,25 +16,6 @@ import MobileMenu from "./MobileMenu.astro";
 
 <!-- mobile menu lives OUTSIDE -->
 <MobileMenu />
-<!-- <header>
-    <nav class="nav-style">
-        <h2><a href="/">♡ Lune's Bakery ♡</a></h2>
-
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/bakes">Baked Goods</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><span id="nav-total">$0</span></li>
-            <li>
-                <a class="cart-styling" href="/checkout"
-                    >🛒 Cart (<span id="cart-count">0</span>)</a
-                >
-            </li>
-        </ul>
-    </nav>
-</header> -->
-
     <style>
         h2 {
             color: black;
@@ -45,7 +26,7 @@ import MobileMenu from "./MobileMenu.astro";
             align-items: center;
             padding: 0 1rem;
             height: 5rem;
-            background-color: #ec4899;
+            background-color: #ffa3d1;
             color: white;
         }
 
@@ -85,7 +66,7 @@ import MobileMenu from "./MobileMenu.astro";
         }
 
         .cart-styling {
-            color: black;
+            color: rgb(255, 255, 255);
         }
     </style>
     <script type="module">
