@@ -16,7 +16,6 @@
     /* menu */
     .nav-mobile {
         display: none;
-        align-items: center;
         padding: 8px;
         position: fixed;
         top: 65px;
@@ -24,7 +23,7 @@
         width: 100%;
         background: rgb(251, 73, 102, 0.85); /* glassy pink */
         backdrop-filter: blur(10px);
-        min-height: 40vh;
+        min-height: 30vh;
         backdrop-filter: blur(14px);
         z-index: 9999;
         transition:
@@ -47,9 +46,12 @@
     }
 
     .nav-mobile li {
+        display: flex;
         flex-wrap: nowrap;
         list-style-type: none;
         margin-right: 0;
+        justify-content: center;
+        align-items: center;
     }
 
     .nav-mobile a {
