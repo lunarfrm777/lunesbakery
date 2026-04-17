@@ -6,9 +6,9 @@
             <li><a href="/contact">Contact</a></li>
             <li><span class="nav-total">$0</span></li>
             <li>
-                <a class="cart-styling" href="/checkout"
-                    >🛒 Cart (<span class="cart-count">0</span>)</a
-                >
+                <a class="cart-styling" href="/checkout"> 
+                    <span>🛒 Cart (<span class="cart-count">3</span>)</span>
+                </a>
             </li>
         </ul>
 <style>
@@ -46,6 +46,7 @@
     }
 
     .nav-mobile li {
+        flex-wrap: nowrap;
         list-style-type: none;
         margin-right: 0;
     }
@@ -72,6 +73,20 @@
         height: 2px;
         background: rgb(255, 120, 235);
         transition: width 0.3s ease;
+    }
+
+    .cart-styling {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      white-space: nowrap;
+      flex-wrap: nowrap;  
+      flex-shrink: 0;
+    }
+    .cart-count {
+       display: inline-block;
+       min-width: 1.5ch;
+       text-align: center;
     }
 
     .nav-mobile a:hover {
