@@ -8,9 +8,9 @@ import Socials from "./Socials.astro";
     <div class="form-container">
      <form action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="ddd37b81-2574-4b9b-a2aa-4bd9ec129b0e">
-        <input type="text" name="name" required>
-        <input type="email" name="email" required>
-        <textarea name="message" required></textarea>
+        Name:  <input type="text" name="name" required> 
+        Email: <input type="email" name="email" required>
+        Message: <textarea name="message" required></textarea>
         <button type="submit">Submit</button>
         </form>
     </div>
@@ -22,11 +22,7 @@ import Socials from "./Socials.astro";
     .container {
         text-align: center;
         padding: 2rem;
-        /* background: linear-gradient(
-      to right,
-      rgba(16, 180, 10, 0.8) 0%,
-      rgba(167, 81, 204, 0.8) 96%
-    ); */
+        background-color: pink;
     }
 
     li {
@@ -37,7 +33,6 @@ import Socials from "./Socials.astro";
 
     .form-container {
         display: flex;
-        background-color: pink;
         flex-direction: column;
         align-items: center;
         padding: 1rem;
