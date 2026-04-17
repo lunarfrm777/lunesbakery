@@ -4,19 +4,20 @@
             <li><a href="/about">About</a></li>
             <li><a href="/bakes">Baked Goods</a></li>
             <li><a href="/contact">Contact</a></li>
-            <li><span class="nav-total">$0</span></li>
             <li>
                 <a class="cart-styling" href="/checkout"> 
                     <span>🛒 Cart (<span class="cart-count">3</span>)</span>
                 </a>
             </li>
+            <li><span class="nav-total">$0</span></li>
         </ul>
 <style>
+
     /* menu */
     .nav-mobile {
         display: none;
         align-items: center;
-        padding: 20px;
+        padding: 8px;
         position: fixed;
         top: 65px;
         left: 0;
@@ -51,7 +52,7 @@
         margin-right: 0;
     }
 
-    .nav-mobile a, span {
+    .nav-mobile a {
         display: block;
         position: relative;
         text-decoration: none;
@@ -62,6 +63,14 @@
         transition: color 0.3s ease;
         font-family: "Jost", sans-serif;
         font-size: 14px;
+    }
+
+    .nav-total {
+        display: block;
+        font-weight: bold;
+        padding-top: .3rem;
+        text-align: center;
+        color: #170312;
     }
 
     .nav-mobile a::after {
