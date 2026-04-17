@@ -105,8 +105,7 @@ import MobileMenu from "./MobileMenu.astro";
 
         // close when clicking outside links (anywhere on menu)
         menu.addEventListener("click", (e) => {
-            // only close if user clicks the background, not the links themselves
-            if (e.target === menu) {
+             if (!e.target.closest("a")) {
                 menu.classList.remove("open");
             }
         });
