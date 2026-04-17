@@ -1,0 +1,91 @@
+<header class="main-header">
+    <!-- desktop links -->
+   <nav class="nav-links-container">
+        <h2><a href="/">♡ Lune's Bakery ♡</a></h2>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/bakes">Baked Goods</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><span id="nav-total">$0</span></li>
+            <li>
+                <a class="cart-styling" href="/checkout"
+                    >🛒 Cart (<span id="cart-count">0</span>)</a
+                >
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    :global(*) {
+        box-sizing: border-box;
+    }
+
+    .main-header {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 1rem;
+        width: 100%;
+        background: #170312;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        overflow: auto;
+        position: relative;
+    }
+
+    .nav-links-container {
+        display: flex;
+        align-items: center;
+        margin-left: auto
+        gap: 2rem;
+    }
+
+    /* nav links horizontal list */
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* individual link style + hover underline */
+    .nav-links a {
+        position: relative;
+        text-decoration: none;
+        font-weight: bold;
+        color: #f36282;
+        transition: color 0.3s ease;
+        font-family: "Jost", sans-serif;
+        font-size: 14px;
+    }
+
+    .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0%;
+        height: 2px;
+        background: rgb(255, 120, 235);
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #e3eb00;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    @media screen and (max-width: 625px) {
+        .nav-links-container {
+            display: none;
+        }
+    }
+</style>
