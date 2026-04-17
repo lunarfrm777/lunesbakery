@@ -1,0 +1,85 @@
+<!-- mobile links -->
+<ul class="nav-mobile" id="nav-mobile">
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
+
+<style>
+    /* menu */
+    .nav-mobile {
+        display: none;
+        align-items: center;
+        padding-top: 45px;
+        position: fixed;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: rgba(243, 98, 130, 0.85); /* glassy pink */
+        backdrop-filter: blur(10px);
+        height: 40vh;
+        backdrop-filter: blur(14px);
+        z-index: 9999;
+        transition:
+            transform 0.8s ease,
+            opacity 0.8s ease;
+    }
+
+    .nav-mobile.open {
+        /* allows for js to show li's on clientload in NavBar :0 Astro is sooo cool!! */
+        /* this block allows for everything run :0 found it looking for something else LMAO */
+        display: block;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    /* there was browser styling applying padding-inline-start! found in inspect :D */
+    ul,
+    ol {
+        padding-inline-start: 0;
+    }
+
+    .nav-mobile li {
+        list-style-type: none;
+        margin-right: 0;
+    }
+
+    .nav-mobile a {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        padding: 0.5rem;
+        font-weight: bold;
+        color: #170312;
+        text-align: center;
+        transition: color 0.3s ease;
+        font-family: "Jost", sans-serif;
+        font-size: 14px;
+    }
+
+    .nav-mobile a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0%;
+        height: 2px;
+        background: rgb(255, 120, 235);
+        transition: width 0.3s ease;
+    }
+
+    .nav-mobile a:hover {
+        color: #e3eb00;
+    }
+
+    .nav-mobile a:hover::after {
+        width: 100%;
+    }
+
+    /* MOBILE */
+    @media screen and (max-width: 625px) {
+        :global(.nav-links-container) {
+            display: none; /* hide desktop links */
+        }
+    }
+</style>
