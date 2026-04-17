@@ -1,10 +1,22 @@
 ---
 const isRoot = Astro.url.pathname === "/";
-
+import NavStyle from "./NavStyle.astro";
+import MobileMenu from "./MobileMenu.astro";
 ---
+<header class="main-header">
+    <a href="/"><img src="/Logo.png" class="logo" /></a>
 
-<header>
-    <!-- fix accessibility  -->
+    <NavStyle />
+
+    <!-- ONLY this -->
+    <label for="check" class="checkbtn" id="burger-btn">
+        <i class="fa-solid fa-burger"></i>
+    </label>
+</header>
+
+<!-- mobile menu lives OUTSIDE -->
+<MobileMenu />
+<!-- <header>
     <nav class="nav-style">
         <h2><a href="/">♡ Lune's Bakery ♡</a></h2>
 
@@ -21,7 +33,7 @@ const isRoot = Astro.url.pathname === "/";
             </li>
         </ul>
     </nav>
-</header>
+</header> -->
 
     <style>
         h2 {
@@ -76,41 +88,31 @@ const isRoot = Astro.url.pathname === "/";
             color: black;
         }
     </style>
-<script type="module">
-    // ✅ Step 3: Update it when cart changes
+    <script type="module">
+        const menu = document.getElementById("nav-mobile");
+        const btn = document.getElementById("burger-btn"); // if using a button elsewhere
 
-    // Right now:
-    // You update the cart
-    // But your nav doesn’t know it changed
+        // toggle menu when burger clicked
+        if (btn) {
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("open");
+            });
+        }
 
-// So after addToCart() and removeItem():
- import { updateCartCount, getCartTotal } from "../scripts/cart.js"
-window.addEventListener("load", () => {
-  const navTotalEl = document.querySelector("#nav-total");
+        // close menu when clicking a link
+        if (menu) {
+            menu.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    menu.classList.remove("open");
+                });
+            });
+        }
 
-  console.log("FOUND:", navTotalEl); // debug
-
-  function updateNavTotal() {
-    if (!navTotalEl) return;
-
-    const total = getCartTotal();
-    navTotalEl.textContent = `${total.toFixed(2)}`;
-  }
-
-// Initial call = “render what already exists now”
-updateCartCount();
-updateNavTotal();
-
-    // updating getCart() (product items)
-    // updating getCartTotal ($ amount)
-   window.addEventListener("cart-updated", () => {
-  updateCartCount();   // uses getCart()
-  updateNavTotal();    // uses getCartTotal()
-});
-    //   storage across tabs!
-  window.addEventListener("storage", () => {
-    updateCartCount()
-    updateNavTotal()
-  });
-  });
+        // close when clicking outside links (anywhere on menu)
+        menu.addEventListener("click", (e) => {
+            // only close if user clicks the background, not the links themselves
+            if (e.target === menu) {
+                menu.classList.remove("open");
+            }
+        });
 </script>
