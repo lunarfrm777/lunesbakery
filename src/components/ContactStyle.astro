@@ -5,6 +5,10 @@ import Socials from "./Socials.astro";
 <div class="container">
         <h2>&#x131A9;&#x2661;&#x131AA; Contact &#x131A9;&#x2661;&#x131AA;</h2>
         <form action="https://api.web3forms.com/submit" method="POST" class="form-container">
+            <section class="bakery-info">
+                <p>&#x131A9;&#x2661;&#x131AA; Telephone: 905-777-7777 &#x131A9;&#x2661;&#x131AA;</p>
+                <p>&#x131A9;&#x2661;&#x131AA; Address: 123 Dreamland Road &#x131A9;&#x2661;&#x131AA;</p>
+            </section>
         <input type="hidden" name="access_key" value="ddd37b81-2574-4b9b-a2aa-4bd9ec129b0e">
         <div class="form-row">
             <label for="name">Name:</label>
@@ -22,15 +26,6 @@ import Socials from "./Socials.astro";
         </div>
         <button type="submit">Submit</button>
     </form>
-    
-        <section class="bakery-info">
-
-            <p>&#x131A9;&#x2661;&#x131AA; Telephone: 905-777-7777 &#x131A9;&#x2661;&#x131AA;</p>
-
-            <p>&#x131A9;&#x2661;&#x131AA; Address: 123 Dreamland Road &#x131A9;&#x2661;&#x131AA;</p>
-            
-            </ul>
-        </section>
     <Location />
     <Socials />
 </div>
@@ -111,14 +106,7 @@ import Socials from "./Socials.astro";
     }
 
     .bakery-info {
-        background-color: rgb(255, 97, 123);
         padding: 1rem;
-        margin-top: 20px;
-        box-shadow:
-            0 4px 15px rgba(0, 0, 0, 0.15),
-            0 10px 30px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
-        border-radius: 4px;
         font-weight: bold;
     }
     
