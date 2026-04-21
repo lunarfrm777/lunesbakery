@@ -4,7 +4,7 @@ import NavStyle from "./NavStyle.astro";
 import MobileMenu from "./MobileMenu.astro";
 ---
 <header class="main-header">
-    <!-- <a href="/"><img src="/Logo.png" class="logo" /></a> -->
+    <a href="/"><img src="/images/Logo.png" class="logo" /></a>
 
     <NavStyle />
 
@@ -21,6 +21,11 @@ import MobileMenu from "./MobileMenu.astro";
             color: black;
         }
 
+        .logo {
+            width: 50%;
+            height: 50%;
+            padding: 1rem;
+        }
         .main-header {
             display: flex;
             justify-content: space-between;
