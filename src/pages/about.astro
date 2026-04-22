@@ -6,26 +6,28 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
     <Nav />
-    <h2>
-        &#x131A9;&#x2661;&#x131AA;About&#x131A9;&#x2661;&#x131AA;
-    </h2>
+    <section>
+        <h2>
+            &#x131A9;&#x2661;&#x131AA;About&#x131A9;&#x2661;&#x131AA;
+        </h2>
 
-    <div class="center-wrapper">
-        <div class="container">
-            <p>
-                &#x131A9;&#x2661;&#x131AA; Everything is grown right around the
-                corner from the bakery which allows for a Knowing of where all
-                the products are coming from!!! &#x131A9;&#x2661;&#x131AA;
-            </p>
+        <div class="center-wrapper">
+            <div class="container">
+                <p>
+                    &#x131A9;&#x2661;&#x131AA; Everything is grown right around the
+                    corner from the bakery which allows for a Knowing of where all
+                    the products are coming from!!! &#x131A9;&#x2661;&#x131AA;
+                </p>
 
-            <p>
-                &#x131A9;&#x2661;&#x131AA; This journey all started with the
-                simple phrase of "Farmers Feed Cities" and now we have the
-                pleasure,, honour and gratitude to be able to feed cities in
-                another way through the bakery! &#x131A9;&#x2661;&#x131AA;
-            </p>
+                <p>
+                    &#x131A9;&#x2661;&#x131AA; This journey all started with the
+                    simple phrase of "Farmers Feed Cities" and now we have the
+                    pleasure,, honour and gratitude to be able to feed cities in
+                    another way through the bakery! &#x131A9;&#x2661;&#x131AA;
+                </p>
+            </div>
         </div>
-    </div>
+    </section>
 </Layout>
 <style>
 
@@ -33,13 +35,18 @@ import Layout from "../layouts/Layout.astro";
         background-color: pink;
     }
 
+    section{
+        padding: 1rem;
+    }
     .center-wrapper {
         display: grid;
         place-items: center;
+        padding: 1rem;
     }
 
     h2 {
         text-align: center;
+        padding: 0.5rem;
     }
 
     p {
