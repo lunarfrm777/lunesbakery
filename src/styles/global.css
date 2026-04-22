@@ -60,6 +60,7 @@ h2 {
   object-fit: cover;
   margin: 0 auto;
   padding: 1rem;
+  flex-grow: 1;
 }
 
 .bake-card h4 {
