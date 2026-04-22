@@ -5,10 +5,11 @@
   box-sizing: border-box;
 }
 
+
 body {
-  margin: 0;
   min-height: 100vh;
   background: pink;
+  margin: 0;
   font-family: sans-serif;
 }
 
@@ -26,7 +27,7 @@ img {
       border: 3px white solid;
       border-radius: 0.8rem;
     }
-
+/* 
   .bake-card {
         display: grid;
         gap: 1rem;
@@ -39,8 +40,25 @@ img {
     }
 
     .bake-card img {
-      width: 200px;
-      height: 200px;
-      overflow: hidden;
-    }
+     width: 100%;
+    height: auto;
+    max-width: 200px;
+    } */
+    .bake-card {
+  display: grid;
+  gap: 1rem;
+  background-color: rgb(183, 124, 255);
+  border-radius: 0.7rem;
+  text-align: center;
+  color: black;
+  padding: 1rem;
+}
+
+.bake-card img {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin: 0 auto;
+}
 

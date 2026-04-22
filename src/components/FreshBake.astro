@@ -40,12 +40,15 @@ const bakes = [
 
 <style>
     .container {
-        display: flex;
-        grid-template-columns: repeat(auto-fill, minmax (200px, 1fr));
+         display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 1rem;
-        margin: 0 auto;
+        flex-wrap: wrap;
         justify-content: center;
+        place-items: center;
         padding: 1.5rem;
+        max-width: 1000px;
+        margin: 0 auto;
     }
 
     h2 {
