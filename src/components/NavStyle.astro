@@ -54,14 +54,18 @@
     }
 
     /* individual link style + hover underline */
-    .nav-links a, .nav-links span {
+    .nav-links a {
         position: relative;
         text-decoration: none;
         font-weight: bold;
-        color: rgb(40, 11, 75);;
+        color: rgb(40, 11, 75);
         transition: color 0.3s ease;
         font-family: "Jost", sans-serif;
         font-size: 14px;
+    }
+
+    .nav-links span {
+        font-weight: bold;
     }
 
     .nav-links a::after {
