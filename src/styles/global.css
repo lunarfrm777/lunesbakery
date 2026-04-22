@@ -9,16 +9,17 @@
 html, body {
   /* min-height: 100vh; */
   background: pink;
+  font-size: 15px;
   margin: 0;
   font-family: sans-serif;
 }
 
 /* shared layout rules */
-img {
+.bake-card img {
   max-width: 100%;
   display: block;
 }
-
+/* 
     .bake-card {
       display: flex;
       flex-direction: column;
@@ -30,7 +31,22 @@ img {
       overflow: hidden;
       width: 100%;
       max-width: 200px;
+      line-height: 1.4;
+} */
+.bake-card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(183, 124, 255);
+  text-align: center;
+  color: black;
+  border-radius: 0.7rem;
+  border: 3px white solid;
+  overflow: hidden;
+    width: 100%;
+   /* fill grid cell */
+  line-height: 1.4;
 }
+
 
 h2 {
   margin: 0;
@@ -43,12 +59,20 @@ h2 {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   margin: 0 auto;
+  padding: 1rem;
 }
-
 
 .bake-card h4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   padding: 0.5rem;
-}
+  min-height: 3rem;
+  display: flex;
+   align-items: stretch;
+  justify-content: center;
+} */
 
 section {
   padding: .5rem 0;
