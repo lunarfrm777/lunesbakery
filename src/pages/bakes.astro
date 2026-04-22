@@ -1,8 +1,8 @@
 ---
+import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 import FreshBake from "../components/FreshBake.astro";
-import Nav from "../components/Nav.astro";
 import Regulars from "../components/Regulars.astro";
 ---
 
@@ -14,9 +14,11 @@ import Regulars from "../components/Regulars.astro";
 </Layout>
 
 <style>
+     body {
+        background-color: pink;
+    }
+    
    .bakes-section {
-        background: pink;
         width: 100%;
-        min-height: 100vh;
     }
 </style>

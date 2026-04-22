@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 ---
 
 <Layout>
@@ -45,6 +46,10 @@ import Layout from "../layouts/Layout.astro";
   render();
 </script>
 <style>
+   body {
+        background-color: pink;
+    }
+    
     #cart-items {
         display: flex;
         grid-template-columns: repeat(auto-fill, minmax (200px, 1fr));
