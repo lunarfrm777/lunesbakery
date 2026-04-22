@@ -36,9 +36,6 @@ import Layout from "../layouts/Layout.astro";
     .center-wrapper {
         display: grid;
         place-items: center;
-        /* whats happening below ?? 
-        calc(100vh - headerHeight) ensures the container is centered in the remaining space, not over the nav/h1. */
-        min-height: calc(50vh);
     }
 
     h2 {
@@ -60,5 +57,9 @@ import Layout from "../layouts/Layout.astro";
         border-radius: 1rem;
         border: 4px white solid;
         background-color:rgba(255, 179, 16, 0.96);
+        max-width: 300px;
+        width: 80%;
+        padding: 1rem;
+        box-sizing: border-box;
     }
 </style>
