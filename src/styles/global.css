@@ -41,6 +41,10 @@ img {
       margin: 0 auto;
 }
 
+h2 {
+  margin: 0;
+  text-align: center;
+}
 .bake-card img {
   width: 100%;
   max-width: 200px;
@@ -49,3 +53,15 @@ img {
   margin: 0 auto;
 }
 
+.bake-card * {
+  margin: 0;
+}
+
+section {
+  padding: 2rem 0;
+}
+
+section h2 {
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
