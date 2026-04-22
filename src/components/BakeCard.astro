@@ -4,8 +4,8 @@ const { image, title, alt, width, src } = Astro.props;
 ---
 
 
-<div class="bordered">
-  <a href={src} class="bake-card">
+<div class="bake-card">
+  <!-- <a href={src} class="bake-card"> -->
     <h4>{title}</h4>
     <img src={image} alt={alt} width={200} height={200} />
   </a>
@@ -24,15 +24,15 @@ const { image, title, alt, width, src } = Astro.props;
 
 
 <style>
-
     .checkout-button {
         display: flex;
         justify-content: center;
         gap: 0.5rem;
-        padding: 1rem;
-        background: pink;
+        padding: .5rem;
+        background: rgb(240, 246, 72);
         text-decoration: none;
-    }
+        border-top: 2px solid #ff2dce80;
+        }
 
     a {
         text-decoration: none;

@@ -18,22 +18,18 @@ img {
   max-width: 100%;
   display: block;
 }
-    .bordered {
-      border: 3px white solid;
-      border-radius: 0.7rem;
-    }
 
     .bake-card {
-      display: grid;
-      gap: 1rem;
+      display: flex;
+      flex-direction: column;
       background-color: rgb(183, 124, 255);
-      border-radius: 0.7rem;
       text-align: center;
       color: black;
-      overflow: hidden; /* 🔥 important */
+      border-radius: 0.7rem;
+      border: 3px white solid;
+      overflow: hidden;
       width: 100%;
       max-width: 200px;
-      margin: 0 auto;
 }
 
 h2 {
@@ -47,18 +43,11 @@ h2 {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   margin: 0 auto;
-  border-radius: 0 !important;
 }
 
 
 .bake-card h4 {
-  margin: 0;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
-.bake-card * {
-  margin: 0;
+  padding: 0.5rem;
 }
 
 section {
