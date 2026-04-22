@@ -9,14 +9,17 @@ import Regulars from "../components/Regulars.astro";
 <Layout>
     <Nav />
 
-    <section>
+    <section class="bakes-section">
         <FreshBake />
         <Regulars />
     </section>
 </Layout>
 
 <style>
-    body {
-        background: pink;
-    }
+   .bakes-section {
+    background: pink;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem 0;
+}
 </style>
