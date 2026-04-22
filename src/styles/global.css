@@ -58,3 +58,21 @@ section h2 {
   margin: 0 0 1rem 0;
   text-align: center;
 }
+
+
+    .remove-btn {
+      background:rgba(241, 255, 93, 0.944);
+      border: none;
+      /* border-radius: 1rem; */
+      padding: 0.5rem 0.75rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .remove-btn:hover {
+      background: rgb(255, 143, 210);
+    }
+
+    .bold-item{
+      font-weight: bold;
+    }
