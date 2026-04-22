@@ -41,8 +41,16 @@ export function addToCart(product) {
 
 
 export function removeItem(index) {
-  let cart = getCart();
-  cart.splice(index, 1);
+   let cart = getCart();
+
+  if (!cart[index]) return;
+
+  if (cart[index].qty > 1) {
+    cart[index].qty -= 1; // remove ONE unit
+  } else {
+    cart.splice(index, 1); // remove item completely
+  }
+
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
