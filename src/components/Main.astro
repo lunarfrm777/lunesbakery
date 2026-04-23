@@ -27,17 +27,22 @@ main {
     }
 
     img {
-        min-width: 50dvw;
+        /* min-width: 50dvw; */
         box-shadow:
             0 4px 15px rgba(0, 0, 0, 0.15),
             0 10px 30px rgba(0, 0, 0, 0.2);
         border-radius: 4px;
+        width: 100%;
+        max-width: 600px; /* optional cap so it doesn’t get huge on desktop */
+        height: auto;
     }
 
     a {
         background-color: rgb(255, 166, 181);
         box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
         width: 15%;
+        /* display: inline-block; */
+        padding: 0.5rem 1rem;
         text-decoration: none;
         padding: .25rem;
         border-radius: 3px;
